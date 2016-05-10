@@ -1,0 +1,121 @@
+\documentclass[%
+fontsize=11%
+,a5paper%
+,DIV=15%
+]{scrartcl}
+%scrartcl
+
+
+
+\usepackage{gredocument}
+\usepackage{adaptateur}
+\usepackage{psaume}
+
+\title{\centrer{\huge{Bénédiction de Chapelle}}} %%Titre principal
+\author{}%\includegraphics[height=10cm]{images/PâquesN-B.jpg}
+\date{}
+
+\makeindex
+        \definecolor{rubrum}{rgb}{.6,0,0}
+        \def\rubrum{\color{rubrum}}%%%%%%%mettre"\def\rubrum{\color{rubrum}}" pour avoir le texte adéquat en rouge
+        \def\nigra{\color{black}}
+            \redlines
+            \definecolor{gregoriocolor}{rgb}{.6,0,0}
+        %
+        %\let\red\rubrum
+        \newcommand{\rep}[2]{\versio{\R \textbf{#1}}{\R \textbf{#2}}}
+        \newcommand{\vers}[2]{\versio{\V {#1}}{\V {#2}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+\pageblanche
+
+        \newfontfamily\lettrines[Scale=1.3]{LettrinesPro800}
+            \def\gretextformat#1{{\fontsize{\taillepolice}{\taillepolice}\selectfont #1}}
+            \def\greinitialformat#1{{\lettrines #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\part{Bénédiction}
+
+%\addcontentsline{toc}{chapter}{A l'extérieur}
+\rubrica{Le début de la cérémonie est à l'extérieur de l'église (ou de l'oratoire) que l'on va bénir. Précédé de la croix et du clergé, l'officiant s'arrête devant la porte fermée de l'église, et dit cette oraison :}
+\versio{Actiónes nostras, qu{\'\ae}sumus, Dómine, aspirándo pr{\'\ae}veni, et adjuvándo proséquere: ut cuncta nostra orátio et operátio a te semper incípiat, et per te c\oe pta finiátur. Per Christum Dóminum nostrum.}{Seigneur, devancez nos actes par votre inspiration, et soutenez-les par votre aide, afin que toutes nos prières et nos actions commencent toujours par vous et, une fois entreprises, par vous s'achèvent. Par le Christ Notre-Seigneur.}
+\Amen
+\rubrica{Ensuite, le prêtre entonne l'antienne que continue le ch\oe ur :}
+\vulgo{Vous m'arroserez avec l'hysope, Seigneur, et je serai purifié : Vous me laverez, et je deviendrai plus blanc que la neige.}
+\cantus{Antienne}{AspergesMeSolus}{Ant.}{7.}
+
+\rubrica{Le prêtre asperge alors les murs extérieurs de l'église ; pendant ce temps, on chante le psaume \emph{Miserere}.}
+\titre{Psaume 50}
+\rubrica{L'\'Eglise des pécheurs exprime le regret de ses enfants contrits et implore le pardon du Christ, source de joie.}
+\cantus{Psaume}{Intonation-050-7a}{7a}{Ps.}
+\medskip
+\monpsalmus[tonus=7a,monprimus=2,monnumerus=2]{050-bi}
+\mongloria[tonus=7a]
+\cantus{Antienne}{AspergesMeSolus}{Ant.}{7.}
+\flectamus
+\traduire{Dómine Deus, qui licet c\ae lo et terra non capiáris, domum tamen dignáris habére in terris, ubi nomen tuum júgiter invocétur : locum hunc qu{\'\ae} umus, beátæ Maríæ semper Vírginis, et beáti \emph{N.}, omniúmque Sanctórum intercedéntibus méritis, seréno pitetátis tuæ intúitu vísita, et per infusiónem grátiæ tuæ ab omni inquiaménto purífica, purificatúmque consérva ; et qui dilécti tui David devotiónem in fílii sui Salomónis ópere complevisti, in hoc ópere desidéria nostra perfícere dignéris, effugiéntque omnes hinc nequítiæ spirituáles. \Perdominum  \quitecum \peromnia}{
+Seigneur Dieu, vous qui ne désirez ni le ciel ni la terre, vous daignez avoir une habitation terrestre, où votre nom sera invoqué, daignez s'il vous plaît visiter ce lieu dans votre bienveillante piété, par les mérites de la bienheureuse Vierge Marie, de saint \emph{N.} et de l'intercession de tous les saints ; purifiez-le de toute souillure, par l'infusion de votre grâce, et gardez le sans tâches ; et vous, qui avez complété la piété de David par l'{\oe}uvre de Salomon, daignez parfaire nos désirs dans cettte {\oe}uvre, et que tout mal spirituel s'éloigne de ce lieu. Par Notre-Seigneur Jésus-Christ votre Fils, qui, étant Dieu, vit et règne avec vous, en l'unité du même Saint-Esprit, dans tous les siècles des siècles.
+}
+\Amen
+\rubrique{La procession entre alors dans l'église. On chante ensuite les litanies à genoux :}
+\titre{Litanies des Saints}
+\litanies[eglise=oui]{}
+\medskip
+\traduire{Prævéniat nos, qu{\'æ}sumus, Dómine, misericórdia tua : et, intercedéntbus ómnibus Sanctis tuis, voces nostras cleméntia tuæ propitiatiónis antícpet. Per Christum Dóminum nostrum.}
+{Nous vous en prions, Seigneur, que votre Miséricorde nous vienne en aide, et par l'intercession de tous vos saints, que le secours de votre bonté devance nos prières. Par le Christ Notre-Seigneur.}
+\Amen
+\rubrique{Le prêtre entonne :}
+\cantus{Verset}{DeusInAdiutoriumSineAlleluia}{\V}{}
+
+\flectamus
+\traduire{Omnípotens et miséricors Deus, qui Sacerdótibus tuis tantam præ céteris grátiam contulísti, ut quidquid in tuo nómine digne, perfectequé ab eis ágitur, a te fíeri credátur : qu\'æ sumus imménsam cleméntiam tuam; ut quidquid modo visitáturi sumus, vísites, et quidquid benedictúri sumus, benedícas : sitque ad nostræ humilitátis intróitum, Sanctórum tuórum méritis, fuga d\'æ monum, Angeli pacis ingréssus. \Perdominum \quitecum \peromnia}
+{
+Dieu Tout-Puissant et Miséricordieux, qui conférez à vos prêtres, parmi bien d'autres grâces, que tout ce qui est réalisé dignement par eux en l'honneur de votre nom, soit perfectionné par vous, comme nous le croyons ; nous implorons votre clémence infinie, pour que ce que nous visitons aujourd'hui reçoive également votre visite ; et pour que ce que nous bénissons soit béni par vous. Que, par les mérites de vos saints, notre humble procession entraîne la fuite des démons et la venue de l'Ange de paix. Par Notre-Seigneur Jésus-Christ votre Fils, qui, étant Dieu, vit et règne avec vous, en l'unité du même Saint-Esprit, dans tous les siècles des siècles.
+}
+\Amen
+\rubrique{Le prêtre entonne alors l'antienne : }
+
+\cantus{Antienne}{BenedicDomine}{3a}{}
+
+\rubrique{On chante alors les trois psaumes suivants. Pendant ce temps, le prêtre asperge les murs intérieurs en récitant l'antienne \emph{Asperges me.}}
+\medskip
+\ps{119}
+
+\rubrique{Héritière de la vérité et de la paix du Christ, l'Église prie son Seigneur de la sauver.}
+\traduction{Dans ma tribulation j'ai crié vers le Seigneur et Il m'a exaucé.}
+\cantus{Psaume}{Intonation-119-3a}{}{}
+
+\newcommand{\psaumentier}[2]
+{
+\monpsalmus[tonus=#2,monprimus=1,monnumerus=1]{#1}
+\mongloria[tonus=#2]
+}
+\monpsalmus[tonus=3a,monprimus=2,monnumerus=2]{119-bi}
+\mongloria[tonus=3a]
+\medskip
+\ps{120}
+\rubrique{L'Église prie le Christ don Seigneur de veiller sur elle, en marche vers la cité éternelle.}
+\psaumentier{120-bi}{3a}
+\medskip
+\ps{121}
+\rubrique{L'Église chante sa joie d'être en marche derrière le Christ vers la Jérusalem des cieux.}
+\psaumentier{121-bi}{3a}
+
+\cantus{Antienne}{BenedicDomine}{3a}{}
+
+
+
+\rubrique{De retour à l'autel le prêtre dit alors :}
+\flectamus
+\traduire{Deus qui loca nómini tuo dicánda sanctíficas, effúnde super hanc oratiónis domum grátiam tuam: ut ab ómnibus hic nomen tuum invocántibus auxílium tuæ misericórdiæ sentiátur. \Perdominum \quitecum \peromnia}
+{Dieu, qui sanctifiez les lieux qui seront consacrés à votre nom, répandez votre grâce sur cette maison de prière, afin que tous ceux qui invoquent ici votre nom éprouvent le secours de votre miséricorde. Par Notre-Seigneur Jésus-Christ votre Fils qui, étant Dieu, vit et règne avec vous, en l'unité du même Saint-Esprit, dans tous les siècles des siècles.}
+\Amen
+
+\rubrique{La bénédiction accomplie, on célèbre la messe du Mystère ou du Saint, en l'honneur de qui on a béni l'Église.}
+
+
+\end{document}
