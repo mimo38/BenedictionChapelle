@@ -1,0 +1,13 @@
+\renewcommand{\versio}[3][1]{%
+	{\parindent=0pt
+	\begin{paracol}{2}
+	\ensurevspace{#1\baselineskip}
+	\switchcolumn\switchcolumn*
+ 	\begin{latin}%
+ #2\looseness=-1 \end{latin}
+	\switchcolumn
+	\begin{french}%
+ #3\looseness=-1 \end{french}
+	\end{paracol}%
+	}%
+}

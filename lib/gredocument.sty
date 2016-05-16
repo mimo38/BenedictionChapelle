@@ -98,6 +98,7 @@
 		
 %%% Pour les textes bilingues.
 \newcommand{\versio}[3][1]{%
+	%
 	{\parindent=0pt
 	\begin{paracol}{2}
 	\ensurevspace{#1\baselineskip}
@@ -109,23 +110,13 @@
  #3\looseness=-1 \end{french}
 	\end{paracol}%
 	}%
+
 }
-
-%\def\versiobis{
-%\renewcommand{\versio}[3][1]{%
-%	{\parindent=0pt
-%	\begin{paracol}{2}
-%	\ensurevspace{#1\baselineskip}
-%	\switchcolumn\switchcolumn*
-% 	\begin{latin}%
-% #2\looseness=-1 \end{latin}
-%	\switchcolumn
-%	\begin{french}%
-% #3\looseness=-1 \end{french}
-%	\end{paracol}%
-%	}%
-%}}
-
+\newcommand{\versiolettrine}[3][1]{
+\usepackage{correctionbug}
+\versio{#1}{#2}{#3}
+\usepackage{retourbug}
+}
 
 %\newcommand{\versio}[2]{{%
 %%\font\diurnale = Liturgie.ttf
