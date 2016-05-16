@@ -111,6 +111,22 @@
 	}%
 }
 
+%\def\versiobis{
+%\renewcommand{\versio}[3][1]{%
+%	{\parindent=0pt
+%	\begin{paracol}{2}
+%	\ensurevspace{#1\baselineskip}
+%	\switchcolumn\switchcolumn*
+% 	\begin{latin}%
+% #2\looseness=-1 \end{latin}
+%	\switchcolumn
+%	\begin{french}%
+% #3\looseness=-1 \end{french}
+%	\end{paracol}%
+%	}%
+%}}
+
+
 %\newcommand{\versio}[2]{{%
 %%\font\diurnale = Liturgie.ttf
 %\begin{parcolumns}[distance=\intercol,colwidths={1=.46\linewidth},nofirstindent]{2}
@@ -161,18 +177,28 @@
 \newcommand{\cantus}[4]{%
 	\setfirstannotation{%
 		%\raisebox{.0ex}[.1ex][0pt]%
-			{\hspace*{-1ex}\rubrum\scriptsize \textsc{#3}%
+			{\hspace*{-1ex}\rubrum\scriptsize \textbf{\textsc{#3}}%
 		}%
 	}%
 	\setsecondannotation{%
 		{\hspace*{-1ex}\rubrum\scriptsize \textsc{#4}}%
 	}%
 	{\widowpenalties 3 0 0 0 \clubpenalties 3 0 0 0%\nowidow[1]\noclub[1]
-		\includescore{gabc/#1/#2}%
+	\medskip	
+	\gregorioscore{gabc/#1/#2}%
 	}
 	\smallskip
 	\smallskip
 }
+%\newcommand{\cantus}[4]{%
+%	\greannotation{%
+%			{\rubrum\scriptsize \textsc{#3}}}%
+%	{\widowpenalties 3 0 0 0 \clubpenalties 3 0 0 0%\nowidow[1]\noclub[1]
+%		\gregorioscore{gabc/#1/#2}%
+%	}
+%	\smallskip
+%	\smallskip
+%}
 \usepackage{autres}
 \usepackage{dialogues}
 \usepackage{mudoc}
@@ -188,5 +214,5 @@
 
 \newcommand{\vulgo}[1]{\noindent{\small #1\par}\smallskip\nopagebreak}
 
-\newkeycommand{\litanies}[rogations=non,ordinations=non,quaranteheures=non,eglise=non,Saint=N.,Sanctus=N.]{
+\newkeycommand{\litanies}[rogations=non,ordinations=non,quaranteheures=non,eglise=non,Saint=N,Sanctus=N.]{
 \input{gabc/Litanies/litanies}}

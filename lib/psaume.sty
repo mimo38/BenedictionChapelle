@@ -362,12 +362,11 @@
 	\OR \commandkey{monprimus} < \value{monversus}\)%
 	\AND \(\value{monultimus} > \value{monversus}%
 	\OR \commandkey{monultimus} = 0\)
-}{%
-	\versio{
-	\noindent\arabic{monnumerus}.\hspace{1ex}#1\par}{
-	\noindent\arabic{monnumerus}.\hspace{1ex}#2\par}
-\stepcounter{monnumerus}%
-}\par
+}{\nopagebreak%
+\versio{\noindent\arabic{monnumerus}.\hspace{1ex}#1%\par
+}{\noindent\arabic{monnumerus}.\hspace{1ex}#2%\par
+} \stepcounter{monnumerus}%
+}\nopagebreak %\par
 }
 
 %Pour appeler un Psaume, un Cantique, le Gloria et sa traduction
