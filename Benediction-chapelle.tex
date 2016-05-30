@@ -30,17 +30,17 @@ fontsize=11%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\maketitle
-\thispagestyle{empty}
-\pageblanche
-
+%%%%%%%%%%%%%% définir la lettrine des partitions
         \newfontfamily\lettrines[Scale=1]{LettrinesPro800}
             \def\gretextformat#1{{\fontsize{\taillepolice}{\taillepolice}\selectfont #1}}
             \def\greinitialformat#1{{\lettrines #1}}
-            
+%%%%%%%%%%%%%%% définir la lettrine du texte            
         \newfontfamily\malettrine[Scale=0.6]{LettrinesPro800}
             \renewcommand{\LettrineFontHook}{\malettrine\color{black}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% début réel du document
+\maketitle
+\thispagestyle{empty}
+\pageblanche %%%% fait sauter une page
 %\part{Bénédiction}
 
 %\addcontentsline{toc}{chapter}{A l'extérieur}
