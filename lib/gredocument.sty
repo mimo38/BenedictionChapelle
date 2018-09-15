@@ -23,6 +23,7 @@
 %%% en A5 (police 11pt, DIV auto), tolerance à 1000 et pretolerance à 300 ;
 %%% en A6 (police 9pt, DIV=11), tolerance à 5000 et pretolerance à 1700.
 \tolerance=5000 \pretolerance=1900
+%\tolerance=10000 \pretolerance=10000
 %%% Paramètres de langue.
 \RequirePackage{polyglossia}\setmainlanguage{french}\setotherlanguage{latin}
 \selectbackgroundlanguage{french}
@@ -112,11 +113,7 @@
 	}%
 
 }
-\newcommand{\versiolettrine}[3][1]{
-\usepackage{correctionbug}
-\versio{#1}{#2}{#3}
-\usepackage{retourbug}
-}
+
 
 %\newcommand{\versio}[2]{{%
 %%\font\diurnale = Liturgie.ttf
@@ -144,11 +141,11 @@
 \def\rb#1{℟{#1}}
 
 % Flexe et mètre dans les psaumes.
-\def\+{†}
+\def\+{{\rubrum{\nolinebreak[4]†}}}
 % \renewcommand{\*}{\raisebox{.5ex}[0pt][0pt]{%
 % 	\rubrum\includegraphics[width=.9ex]{Asterisque}}%
 % }
-\renewcommand{\*}{{\rubrum *}}
+\renewcommand{\*}{{\rubrum{\nolinebreak[4]*}}}
 \def\gredagger{†}
 %\let\grestar\*
 %\let\greheightstar\*

@@ -1,3 +1,5 @@
+%%%%% césure des mots
+
 %%% Psaumes.
 %Pour les syllabes d'accent et de préparation dans les Psaumes
 %accent
@@ -348,6 +350,40 @@
 	\noindent\arabic{numerus}.\hspace{1ex}#1\par\stepcounter{numerus}%
 }\par
 }
+
+\newcommand{\versusgloria}[1]{%
+	\stepcounter{versus}
+	\noindent\arabic{numerus}.\hspace{1ex}#1\par\stepcounter{numerus}%
+}
+
+%Pour appeler un Psaume, un Cantique, le Gloria
+\newkeycommand\psalmus[tonus,primus=1,ultimus=0,numerus=\value{numerus}][1]{%
+	\setcounter{versus}{0}%
+	\setcounter{numerus}{\commandkey{numerus}}%
+	\setcounter{ultimus}{\commandkey{ultimus} + 1}%
+	\input{gabc/Psaume/Ps-#1}%
+}
+\newkeycommand\canticum[tonus=1,primus=1,ultimus=0,numerus=\value{numerus}][1]{%
+	\setcounter{versus}{0}%
+	\setcounter{numerus}{\commandkey{numerus}}%
+	\setcounter{ultimus}{\commandkey{ultimus} + 1}%
+	\input{gabc/Psaume/Ps-#1}%
+}
+
+
+\newkeycommand{\gloria}[tonus]{%
+	\setcounter{versus}{\value{ultimus} - 1}
+	\input{gabc/Psaume/Gloria}
+}
+\newkeycommand{\gloriacommunion}[tonus]{%
+	\setcounter{versus}{\value{ultimus} - 1}
+	\bigskip
+	\input{gabc/Psaume/Gloria-communion}
+}
+
+\newcommand{\couplets}[2]{
+\input{gabc/#1/#2}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% AJOUT %%%%%%%%%%%%%%%%
 %Pour saisir un verset de Psaume et sa traduction
 \newcounter{monnumerus}
@@ -390,35 +426,35 @@
 \stepcounter{monnumerus}%
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% FIN AJOUT %%%%%%%%%%%%%%%%
-\newcommand{\versusgloria}[1]{%
-	\stepcounter{versus}
-	\noindent\arabic{numerus}.\hspace{1ex}#1\par\stepcounter{numerus}%
-}
-
-%Pour appeler un Psaume, un Cantique, le Gloria
-\newkeycommand\psalmus[tonus,primus=1,ultimus=0,numerus=\value{numerus}][1]{%
-	\setcounter{versus}{0}%
-	\setcounter{numerus}{\commandkey{numerus}}%
-	\setcounter{ultimus}{\commandkey{ultimus} + 1}%
-	\input{gabc/Psaume/Ps-#1}%
-}
-\newkeycommand\canticum[tonus=1,primus=1,ultimus=0,numerus=\value{numerus}][1]{%
-	\setcounter{versus}{0}%
-	\setcounter{numerus}{\commandkey{numerus}}%
-	\setcounter{ultimus}{\commandkey{ultimus} + 1}%
-	\input{gabc/Psaume/Ps-#1}%
-}
+%%%%%%%%%%%%%%%%%ESSAI RISQUÉ %%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\newkeycommand{\gloria}[tonus]{%
-	\setcounter{versus}{\value{ultimus} - 1}
-	\input{gabc/Psaume/Gloria}
-}
-\newkeycommand{\gloriacommunion}[tonus]{%
-	\setcounter{versus}{\value{ultimus} - 1}
-	\bigskip
-	\input{gabc/Psaume/Gloria-communion}
-}
+\newcounter{lenumero}
+\newcounter{leverset}
+%\newcounter{verset}
+\newcounter{dernierverset}
+\setcounter{leverset}{0}
 
-\newcommand{\couplets}[2]{
-\input{gabc/#1/#2}}
+\newkeycommand\psaumetraduit[leton,premierverset=1,dernierverset=0,lenumero=\value{lenumero},lepsaume][2]{%
+	\setcounter{leverset}{0}%
+	\setcounter{lenumero}{\commandkey{lenumero}}%
+	\setcounter{dernierverset}{\commandkey{dernierverset} + 1}%
+	\input{gabc/Psaume/Ps-#1}}%
+
+\newkeycommand{\gloriatraduit}[leton=\value{leton}]{%
+	\setcounter{monversus}{\value{leverset}}
+	\input{gabc/Psaume/Gloria-tr}}
+
+\newcommand{\latraduction}[1]{
+\setcounter{leverset}{\value{leverset}+1}
+\versio{\psalmus[tonus=\value{leton},primus=\value{leverset},ultimus=\value{leverset},numerus=\value{leverset}]{\lepsaume}}
+{\noindent\arabic{leverset}.\hspace{1ex}#1}}
+
+\newcommand{\leversusgloria}[2]{%
+	\stepcounter{monversus}
+	\versio{	
+\noindent\arabic{monnumerus}.\hspace{1ex}#1\par}{
+\noindent\arabic{monnumerus}.\hspace{1ex}#2\par}
+
+\stepcounter{monnumerus}%
+}
